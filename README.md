@@ -1,1 +1,2 @@
 # kotesashiminami3_7
+小手指南3丁目7期
