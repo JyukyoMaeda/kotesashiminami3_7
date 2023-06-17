@@ -88,6 +88,12 @@ body {
   animation: fadein 1s forwards;
 }
 
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+}
+
 .l-mgt_5 {
   margin-top: 2.5vh !important;
 }
@@ -268,19 +274,37 @@ body {
   width: 100%;
   height: auto;
 }
+.l-contents.-img-bg .imgBox.-parallax {
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.l-contents.-img-bg .imgBox.-parallax.-parallax_bg {
+  background-image: url(../images/bg/header_bg_s.jpg);
+}
+@media screen and (min-width: 541px) {
+  .l-contents.-img-bg .imgBox.-parallax.-parallax_bg {
+    background-image: url(../images/bg/header_bg.jpg);
+  }
+}
 .l-contents.-img-bg .l-contentsBox {
   width: 100%;
   position: absolute;
 }
-.l-contents.-img-bg .l-contentsBox.-w--center {
+.l-contents.-img-bg .l-contentsBox.-logo {
+  width: 60%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  animation: fadein-logo 1s forwards;
 }
-.l-contents.-img-bg .l-contentsBox.-w--right {
-  right: 10%;
-}
-.l-contents.-img-bg .l-contentsBox.-w--left {
-  left: 10%;
+@media screen and (min-width: 541px) {
+  .l-contents.-img-bg .l-contentsBox.-logo {
+    width: 30%;
+  }
 }
 .l-contents.-img-bg .l-contentsBox .l-contentsBox--wrapper {
   width: 100%;
@@ -917,6 +941,42 @@ body {
     margin-left: 25px !important;
   }
 }
+@media screen and (min-width: 541px) {
+  .l-footer.-iruma {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 40px auto 80px !important;
+  }
+}
+.l-footer.-iruma .l-footer--title {
+  width: 60%;
+  height: auto;
+  margin: auto !important;
+}
+@media screen and (max-width: 540px) {
+  .l-footer.-iruma .l-footer--title {
+    margin: auto auto 5px !important;
+  }
+}
+@media screen and (min-width: 541px) {
+  .l-footer.-iruma .l-footer--title {
+    width: 50%;
+    max-width: 330px;
+    margin-right: 25px !important;
+  }
+}
+.l-footer.-iruma .l-footer--tel {
+  height: auto;
+  width: 60%;
+  margin: auto !important;
+  text-align: center;
+}
+@media screen and (min-width: 541px) {
+  .l-footer.-iruma .l-footer--tel {
+    width: 50%;
+    margin-left: 25px !important;
+  }
+}
 
 .l-linkImg {
   display: block;
@@ -1208,7 +1268,7 @@ body {
     width: 83%;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1900px) {
   .l-slider {
     margin: 145px 0 auto auto;
   }
@@ -1285,7 +1345,7 @@ body {
     max-width: 80px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1900px) {
   .slide-arrow {
     width: 2.5vw;
     max-width: 80px;
@@ -3344,6 +3404,17 @@ header {
 
 @keyframes fadein {
   0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein-logo {
+  0% {
+    opacity: 0;
+  }
+  70% {
     opacity: 0;
   }
   100% {

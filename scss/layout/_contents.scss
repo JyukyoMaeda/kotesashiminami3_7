@@ -10,34 +10,33 @@
 		.imgBox{// 背景画像
 			width: 100%;
 			height: auto;
+			&.-parallax{//パラドックス背景の場合、ここは透明画像
+				justify-content: center;
+				align-items: center;
+
+				background-attachment: fixed;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				&.-parallax_bg{//ここに背景を指定する。
+					background-image: url(../images/bg/header_bg_s.jpg);
+					@include mq(tb){
+						background-image: url(../images/bg/header_bg.jpg);
+					}
+				}
+			}
 		}
 		.l-contentsBox{// コンテンツ要素
 			width: 100%;
 			position: absolute;
-			&.-w--center{// 横 --- 中央
-				// top:50%;
+			&.-logo{
+				width: 60%;
+				top: 50%;
 				left: 50%;
-				transform: translateX(-50%);
+				transform: translate(-50%,-50%);
+				animation: fadein-logo 1s forwards;
 				@include mq(tb){
-					// top: 50%;
-				}
-			}
-			&.-w--right{// 横 --- 右
-				// top:50%;
-				right: 10%;
-				// transform: translateX(-50%);
-				@include mq(tb){
-					// top: 43.5%;
-					// right:50%;
-				}
-			}
-			&.-w--left{// 横 --- 左
-				// top:50%;
-				left: 10%;
-				// transform: translateX(-50%);
-				@include mq(tb){
-					// top: 43.5%;
-					// left:50%;
+					width: 30%;
 				}
 			}
 			.l-contentsBox--wrapper{
