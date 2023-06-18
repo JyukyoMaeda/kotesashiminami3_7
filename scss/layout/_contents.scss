@@ -39,6 +39,11 @@
 					width: 30%;
 				}
 			}
+			&.-text{
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 			.l-contentsBox--wrapper{
 				width: 100%;
 				height: auto;
@@ -49,6 +54,7 @@
 
 				}
 			}
+
 		}
 	}
 	// 基本的にSliderは、「Slick or Swiper」を使用すること
@@ -56,6 +62,33 @@
 	&.-slider{
 		//下記スマホ以上
 		@include mq(tb){
+		}
+	}
+	&.kodawariArea{
+		position: relative;
+		height: 10vh;
+		@include mq(tb){
+			height: 15vh;
+		}
+		.kodawari-text{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+			@include mq(tb){
+				width: 35%;
+			}
+		}
+	}
+	.arrow_btm{
+		position: absolute;
+		top: 150%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 15%;
+		@include mq(tb){
+			width: 5%;
 		}
 	}
 }

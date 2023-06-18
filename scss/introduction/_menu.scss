@@ -6,18 +6,26 @@
 
 // メニューボックスについて
 .menu_box{
-    position: fixed;
+
     top: 15px;
     right: 0;
     width: 70px;
     height: 7px;
     z-index: 10;
+    @include mq(sp){
+        position: fixed;
+        // background: rgba(255,255,255,0.5);
+    }
     @include mq(tb){
+        position: absolute;
         top: 0;
-        right: 0;
-        width: 100px;
-        height: 250px;
-        background: rgba(255,255,255,0.5);
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px;
+        height: 90px;
+        // background: rgba(255,255,255,0.5);
     }
     .el_humburger {
         position: absolute;
@@ -151,6 +159,34 @@
                         opacity: 0.5;
                         border-bottom: #999 1px solid;
                     }
+                }
+            }
+        }
+        &.-flex{
+            @include mq(tb){
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                align-items: center;
+                @include mq(tb-pc1000){
+                    justify-content: space-between;
+
+                }
+            }
+            .nav2_left{
+                width: 25%;
+                text-align: end;
+                @include mq(tb-pc1000){
+                    width: 20%;
+                }
+            }
+            .nav2_right{
+                width: 65%;
+                // @include mq(tb){
+                //     width: 43%;
+                // }
+                @include mq(tb-pc1000){
+                    width: 46%;
                 }
             }
         }

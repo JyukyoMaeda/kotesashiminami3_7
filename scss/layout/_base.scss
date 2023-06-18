@@ -34,6 +34,17 @@ img{
 	-moz-user-select: none;
 }
 
+.w1200{
+	width: 75% !important;
+	max-width: 1200px;
+	margin: auto;
+}
+.w93_s{
+	@include mq(sp){
+		width: 93%;
+		margin: auto;
+	}
+}
 
 // 幅調整用 margin = 要素外の空間
 // 上のみ
@@ -70,6 +81,13 @@ img{
 		margin-bottom: 10vh !important;
 	}
 }
+.l-mgb_20{
+	margin-bottom : 8vh !important;
+	@include mq(tb){
+		margin-bottom: 20vh !important;
+	}
+}
+
 
 // 幅調整用 padding = 要素内の空間
 // 上のみ
