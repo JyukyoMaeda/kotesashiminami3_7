@@ -26,22 +26,31 @@
 
 body{
 	animation: fadein 1s forwards;
+	pointer-events: none;
 }
 img{
 	// pointer-events: none;
 	user-drag: none;
 	-webkit-user-drag: none;
 	-moz-user-select: none;
+	vertical-align: bottom;
 }
 
 .w1200{
-	width: 75% !important;
+	width: 90% !important;
 	max-width: 1200px;
 	margin: auto;
+	&.-v02{
+		width: 65% !important;
+		@include mq(sp){
+			width: 93% !important;
+			margin: auto;
+		}
+	}
 }
 .w93_s{
 	@include mq(sp){
-		width: 93%;
+		width: 93% !important;
 		margin: auto;
 	}
 }
@@ -55,6 +64,7 @@ img{
 	@include mq(tb){
 		margin-top: 5vh !important;
 	}
+
 }
 .l-mgt_10{
 	margin-top: 5vh !important;
@@ -74,6 +84,16 @@ img{
 	@include mq(tb){
 		margin-bottom: 5vh !important;
 	}
+	&.-s_5{
+		@include mq(sp){
+			margin-bottom: 5vh !important;
+		}
+	}
+	&.-s_0{
+		@include mq(sp){
+			margin-bottom: 0 !important;
+		}
+	}
 }
 .l-mgb_10{
 	margin-bottom : 5vh !important;
@@ -84,7 +104,7 @@ img{
 .l-mgb_20{
 	margin-bottom : 8vh !important;
 	@include mq(tb){
-		margin-bottom: 20vh !important;
+		margin-bottom: 10vh !important;
 	}
 }
 

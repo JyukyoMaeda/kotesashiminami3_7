@@ -44,6 +44,16 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
+			&.-bottomBtn{
+				bottom: 9%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 50%;
+				@include mq(tb){
+					bottom: 15%;
+					width: 30%;
+				}
+			}
 			.l-contentsBox--wrapper{
 				width: 100%;
 				height: auto;
@@ -54,7 +64,6 @@
 
 				}
 			}
-
 		}
 	}
 	// 基本的にSliderは、「Slick or Swiper」を使用すること

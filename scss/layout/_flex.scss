@@ -285,7 +285,10 @@
 				width: 100%;
 				justify-content: space-between;
 				.flexItem{
-					width: 45%;
+					width: 40%;
+					&:nth-child(1){
+						width: 50%;
+					}
 				}
 			}
 			&_right{
